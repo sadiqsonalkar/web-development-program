@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title> Registration FORM </title>
+	<h1 align="center"> Registration Form </h1>
+	<script>
+	function validateForm() 
+	{
+		var l = /^[A-Za-z]+$/;
+		var x = document.forms["myForm"]["Name"].value;
+		if (x == "")
+		{
+			alert("Name must be filled out");
+			return false;
+		}
+		
+		var y = document.forms["myForm"]["Email"].value;
+		if (y == "")
+		{
+			alert("Email must be filled out");
+			return false;
+		}
+		var z = document.forms["myForm"]["Password"].value;
+		if (z == "")
+		{
+			alert("password must be filled out");
+			return false;
+		}
+		var a = document.forms["myForm"]["Confirm Password"].value;
+		if (a == "")
+		{
+			alert("confirm password must be filled out");
+			return false;
+		}
+		
+		if (z!=a)
+		{
+			alert("please enter same password");
+			return false;
+		}
+		
+		if(x.match(l))
+			true;
+		else
+		{
+			alert("Name must only contain letters");
+			return false;
+		}
+	}
+</script>
+	</head>
+	<body>
+	<form name="myForm" >
+		<table align="center" border="3" cellpadding="10" cellspacing="2">
+			<tr>
+				<td>Name</td>
+				<td>:</td>
+				<td><input type="text" name="Name"></td>
+			</tr>
+			<tr>
+				<td>Email</td>
+				<td>:</td>
+				<td><input type="email" name="Email"></td>
+			</tr>
+			<tr>
+				<td>Phone no.</td>
+				<td>:</td>
+				<td><input type="tel" name="Phone no" pattern="[0-9]{10}"></td>
+			</tr>
+			<tr>
+				<td>Password</td>
+				<td>:</td>
+				<td><input type="password" name="Password"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"><br><span>please enter 8 digits</span></td>
+				
+			</tr>
+			<tr>
+				<td>Confirm Password</td>
+				<td>:</td>
+				<td><input type="password" name="Confirm Password" ></td>
+			</tr>
+			<tr>
+				<td colspan="3"></td>
+			</tr>
+			<tr>
+				<td align="center" colspan="3"><input type="submit" name="Submit" value="Submit" onclick="return validateForm()"></td>
+			</tr>
+			</table>
+			</form>
+	</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator Simple Interest</title>
+	<h1><b>Calculator Simple Interest<b></h1><br>
+<script type="text/javascript">
+
+	function simpleinterest()
+	{
+	var p=document.getElementById("principal").value;
+	var n=document.getElementById("years").value;
+	var r=document.getElementById("rate").value;
+	var s;
+	s=p*n*r/100;
+	alert("Interest Amount is "+ "" +s);
+	}
+	
+	function totalamount()
+	{
+	var p=document.getElementById("principal").value;
+	var n=document.getElementById("years").value;
+	var r=document.getElementById("rate").value;
+	var t;
+	t=p*n*r/100+(+p);	
+	alert("Total Amount is "+ "" +t);
+	}
+</script>
+</head>
+<body align ="center">
+	<form name="myForm" align="center">
+	<table cellpadding="15" border="2" align="center">
+	<tr><td><b>Principal Amount : <b></td><td><input type="number" id="principal" name="principal"></td></tr>
+	<tr><td><b>No. of years : </b></td><td><input type="number" id="years" name="years"></td></tr>
+	<tr><td><b>Rate of interest : </b></td><td><input type="number" id="rate" name="rate"></td></tr>
+	</table>
+	<p><input type="button" onclick="simpleinterest()" value="Calculate Interest"></p>
+	<p><input type="button" onclick="totalamount()" value="Final Amount"></p>
+	</form>
+</body>
+</html>
